@@ -74,7 +74,7 @@ abstract class AbstractTriangle
    * @param $lengthA
    * @param $lengthB
    * @param $lengthC
-   * @return int
+   * @return float
    */
   protected function countArea($lengthA, $lengthB, $lengthC)
   {
@@ -96,5 +96,4 @@ abstract class AbstractTriangle
 
     return $perimeter;
   }
-
 }

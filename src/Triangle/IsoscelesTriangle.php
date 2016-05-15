@@ -4,8 +4,26 @@ namespace Triangle;
 
 final class IsoscelesTriangle extends AbstractTriangle
 {
+  /**
+   * @param $lengthA
+   * @param $lengthB
+   * @param $lengthC
+   * @return float
+   */
+  protected function countArea($lengthA, $lengthB, $lengthC)
+  {
+    $area = $lengthC/2 * sqrt(($lengthA+$lengthC/2)*($lengthA-$lengthC/2));
 
-  public function countPerimeter($lengthA, $lengthB, $lengthC)
+    return $area;
+  }
+
+  /**
+   * @param $lengthA
+   * @param $lengthB
+   * @param $lengthC
+   * @return int
+   */
+  protected function countPerimeter($lengthA, $lengthB, $lengthC)
   {
     $perimeter = 2 * $lengthA + $lengthC;
 
