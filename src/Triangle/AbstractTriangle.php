@@ -2,23 +2,23 @@
 
 namespace Triangle;
 
-class AbstractTriangle
+abstract class AbstractTriangle
 {
   /**
-   * @var string
+   * @var int
    */
-  private $lengthA;
+  protected $lengthA;
   /**
-   * @var string
+   * @var int
    */
-  private $lengthB;
+  protected $lengthB;
   /**
-   * @var string
+   * @var int
    */
-  private $lengthC;
+  protected $lengthC;
 
   /**
-   * @return string
+   * @return int
    */
   public function getLengthA()
   {
@@ -26,7 +26,7 @@ class AbstractTriangle
   }
 
   /**
-   * @param string $lengthA
+   * @param int $lengthA
    */
   public function setLengthA($lengthA)
   {
@@ -34,7 +34,7 @@ class AbstractTriangle
   }
 
   /**
-   * @return string
+   * @return int
    */
   public function getLengthB()
   {
@@ -42,7 +42,7 @@ class AbstractTriangle
   }
 
   /**
-   * @param string $lengthB
+   * @param int $lengthB
    */
   public function setLengthB($lengthB)
   {
@@ -50,7 +50,7 @@ class AbstractTriangle
   }
 
   /**
-   * @return string
+   * @return int
    */
   public function getLengthC()
   {
@@ -58,11 +58,43 @@ class AbstractTriangle
   }
 
   /**
-   * @param string $lengthC
+   * @param int $lengthC
    */
   public function setLengthC($lengthC)
   {
     $this->lengthC = $lengthC;
+  }
+
+  /**
+   * @return string
+   */
+  abstract protected function printScreen();
+
+  /**
+   * @param $lengthA
+   * @param $lengthB
+   * @param $lengthC
+   * @return int
+   */
+  protected function countArea($lengthA, $lengthB, $lengthC)
+  {
+    $semiperimeter = ($lengthA + $lengthB + $lengthC) / 2;
+    $area = sqrt($semiperimeter * ($semiperimeter - $lengthA) * ($semiperimeter - $lengthB) * ($semiperimeter - $lengthC));
+
+    return $area;
+  }
+
+  /**
+   * @param $lengthA
+   * @param $lengthB
+   * @param $lengthC
+   * @return int
+   */
+  protected function countPerimeter($lengthA, $lengthB, $lengthC)
+  {
+    $perimeter = $lengthA + $lengthB + $lengthC;
+
+    return $perimeter;
   }
 
 }
