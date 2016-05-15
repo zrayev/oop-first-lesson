@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php';
 use Triangle\EquilateralTriangle;
 use Triangle\IsoscelesTriangle;
 use Triangle\ScaleneTriangle;
+use Triangle\RightTriangle;
 
 echo 'Equilateral Triangle' . "<br>\n";
 $equilateral = new EquilateralTriangle();
@@ -30,7 +31,7 @@ $scalene ->setLengthC(7);
 echo $scalene->printScreen() . "<br>\n";
 
 echo 'Right Triangle' . "<br>\n";
-$right = new ScaleneTriangle();
+$right = new RightTriangle();
 $right ->setLengthA(12);
 $right ->setLengthB(16);
 $right ->setLengthC(20);
