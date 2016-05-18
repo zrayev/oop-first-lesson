@@ -10,17 +10,18 @@ final class EquilateralTriangle extends AbstractTriangle
    * @param int $lengthB
    * @param int $lengthC
    */
-  public function __construct($lengthA = 6, $lengthB = 6, $lengthC = 6)
+  public function __construct($lengthA = 6, $lengthB = 6, $lengthC = 6, $name = "EquilateralTriangle")
   {
     $this->lengthA = $lengthA;
     $this->lengthB = $lengthB;
     $this->lengthC = $lengthC;
+    $this->name = $name;
   }
   
   /**
    * @return int
    */
-  protected function countArea()
+  public function countArea()
   {
     $area = $this->lengthA * $this->lengthA * (sqrt(3) / 4);
 
@@ -30,7 +31,7 @@ final class EquilateralTriangle extends AbstractTriangle
   /**
    * @return int
    */
-  protected function countPerimeter()
+  public function countPerimeter()
   {
     $perimeter = 3 * $this->lengthA;
 
@@ -42,12 +43,6 @@ final class EquilateralTriangle extends AbstractTriangle
    */
   public function printScreen()
   {
-    $str = 'a: ' . $this->lengthA . "<br>\n";
-    $str .= 'b: ' . $this->lengthB . "<br>\n";
-    $str .= 'c: ' . $this->lengthC . "<br>\n";
-    $str .= 'area: ' . $this->countArea() . "<br>\n";
-    $str .= 'perimeter: ' . $this->countPerimeter() . "<br>\n";
 
-    return $str;
   }
 }

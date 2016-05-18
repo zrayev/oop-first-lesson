@@ -16,14 +16,18 @@ abstract class AbstractTriangle
    * @var int
    */
   protected $lengthC;
+  /**
+   * @var string
+   */
+  protected $name;
 
   abstract function __construct();
 
-  abstract protected function countArea();
+  abstract public function countArea();
 
-  abstract protected function countPerimeter();
+  abstract public function countPerimeter();
 
-  abstract protected function printScreen();
+  abstract public function printScreen();
   
   /**
    * @return int
@@ -71,6 +75,22 @@ abstract class AbstractTriangle
   public function setLengthC($lengthC)
   {
     $this->lengthC = $lengthC;
+  }
+
+  /**
+   * @return string
+   */
+  public function getName()
+  {
+    return $this->name;
+  }
+
+  /**
+   * @param string $name
+   */
+  public function setName($name)
+  {
+    $this->name = $name;
   }
 
 }
