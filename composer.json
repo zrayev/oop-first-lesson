@@ -15,7 +15,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Triangle\\": "src/Triangle"
+      "Triangle\\": "src/Triangle",
+      "Show\\": "Show"
     }
   }
 }

@@ -5,27 +5,35 @@ namespace Triangle;
 final class IsoscelesTriangle extends AbstractTriangle
 {
   /**
-   * @param $lengthA
-   * @param $lengthB
-   * @param $lengthC
+   * IsoscelesTriangle constructor.
+   * @param int $lengthA
+   * @param int $lengthB
+   * @param int $lengthC
+   */
+  public function __construct($lengthA = 10, $lengthB = 10, $lengthC = 18, $name = "IsoscelesTriangle")
+  {
+    $this->lengthA = $lengthA;
+    $this->lengthB = $lengthB;
+    $this->lengthC = $lengthC;
+    $this->name = $name;
+  }
+  
+  /**
    * @return float
    */
-  protected function countArea($lengthA, $lengthB, $lengthC)
+  public function countArea()
   {
-    $area = $lengthC/2 * sqrt(($lengthA+$lengthC/2)*($lengthA-$lengthC/2));
+    $area = $this->lengthC/2 * sqrt(($this->lengthA+$this->lengthC/2)*($this->lengthA-$this->lengthC/2));
 
     return $area;
   }
 
   /**
-   * @param $lengthA
-   * @param $lengthB
-   * @param $lengthC
    * @return int
    */
-  protected function countPerimeter($lengthA, $lengthB, $lengthC)
+  public function countPerimeter()
   {
-    $perimeter = 2 * $lengthA + $lengthC;
+    $perimeter = 2 * $this->lengthA + $this->lengthC;
 
     return $perimeter;
   }
@@ -35,11 +43,12 @@ final class IsoscelesTriangle extends AbstractTriangle
    */
   public function printScreen()
   {
-    $str = 'a: ' . $this->getLengthA() . "<br>\n";
+    $str = $this->getName() . "<br>\n";
+    $str .= 'a: ' . $this->lengthA . "<br>\n";
     $str .= 'b: ' . $this->getLengthB() . "<br>\n";
     $str .= 'c: ' . $this->getLengthC() . "<br>\n";
-    $str .= 'area: ' . $this->countArea($this->lengthA, $this->lengthB, $this->lengthC) . "<br>\n";
-    $str .= 'perimeter: ' . $this->countPerimeter($this->lengthA, $this->lengthB, $this->lengthC) . "<br>\n";
+    $str .= 'area: ' . $this->countArea() . "<br>\n";
+    $str .= 'perimeter: ' . $this->countPerimeter() . "<br>\n";
 
     return $str;
   }
