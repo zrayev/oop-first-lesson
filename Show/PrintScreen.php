@@ -3,9 +3,6 @@
 namespace Show;
 
 use Triangle\EquilateralTriangle;
-use Triangle\IsoscelesTriangle;
-use Triangle\ScaleneTriangle;
-use Triangle\RightTriangle;
 
 class PrintScreen
 {
