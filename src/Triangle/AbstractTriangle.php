@@ -17,6 +17,14 @@ abstract class AbstractTriangle
    */
   protected $lengthC;
 
+  abstract function __construct();
+
+  abstract protected function countArea();
+
+  abstract protected function countPerimeter();
+
+  abstract protected function printScreen();
+  
   /**
    * @return int
    */
@@ -65,35 +73,4 @@ abstract class AbstractTriangle
     $this->lengthC = $lengthC;
   }
 
-  /**
-   * @return string
-   */
-  abstract protected function printScreen();
-
-  /**
-   * @param $lengthA
-   * @param $lengthB
-   * @param $lengthC
-   * @return float
-   */
-  protected function countArea($lengthA, $lengthB, $lengthC)
-  {
-    $semiperimeter = ($lengthA + $lengthB + $lengthC) / 2;
-    $area = sqrt($semiperimeter * ($semiperimeter - $lengthA) * ($semiperimeter - $lengthB) * ($semiperimeter - $lengthC));
-
-    return $area;
-  }
-
-  /**
-   * @param $lengthA
-   * @param $lengthB
-   * @param $lengthC
-   * @return int
-   */
-  protected function countPerimeter($lengthA, $lengthB, $lengthC)
-  {
-    $perimeter = $lengthA + $lengthB + $lengthC;
-
-    return $perimeter;
-  }
 }

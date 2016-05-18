@@ -4,16 +4,31 @@ namespace Triangle;
 
 final class RightTriangle extends AbstractTriangle
 {
+  public function __construct($lengthA = 12, $lengthB = 16, $lengthC = 20)
+  {
+    $this->lengthA = $lengthA;
+    $this->lengthB = $lengthB;
+    $this->lengthC = $lengthC;
+  }
+  
   /**
-   * @param $lengthA
-   * @param $lengthB
    * @return float
    */
-  protected function countArea($lengthA, $lengthB)
+  protected function countArea()
   {
-    $area = $lengthA*$lengthB/2;
+    $area = $this->lengthA*$this->lengthB/2;
 
     return $area;
+  }
+
+  /**
+   * @return int
+   */
+  protected function countPerimeter()
+  {
+    $perimeter = $this->lengthA + $this->lengthB + $this->lengthC;
+
+    return $perimeter;
   }
   
   /**
@@ -24,8 +39,8 @@ final class RightTriangle extends AbstractTriangle
     $str = 'a: ' . $this->getLengthA() . "<br>\n";
     $str .= 'b: ' . $this->getLengthB() . "<br>\n";
     $str .= 'c: ' . $this->getLengthC() . "<br>\n";
-    $str .= 'area: ' . $this->countArea($this->lengthA, $this->lengthB) . "<br>\n";
-    $str .= 'perimeter: ' . $this->countPerimeter($this->lengthA, $this->lengthB, $this->lengthC) . "<br>\n";
+    $str .= 'area: ' . $this->countArea() . "<br>\n";
+    $str .= 'perimeter: ' . $this->countPerimeter() . "<br>\n";
 
     return $str;
   }
